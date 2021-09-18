@@ -57,8 +57,8 @@ class Particle {
             mouse.x - this.x
           );
         if (distance < 100){
-            this.directionX= Math.cos(angel) 
-            this.directionY= Math.sin(angel )
+            this.directionX= Math.cos(angel + Math.PI) 
+            this.directionY= Math.sin(angel + Math.PI )
         }
         //chek coligion betwen particels
        
@@ -100,26 +100,27 @@ function connect(){
             + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
             if (distance < (canvas.width/5) * (canvas.height/5)) {
                 opacityValue = 1 - (distance/30000);
-                let dx = mouse.x - particlesArray[a].x;
-                let dy = mouse.y - particlesArray[a].y;
+                let dx = mouse.x - particlesArray[b].x;
+                let dy = mouse.y - particlesArray[b].y;
                 let mouseDistance = Math.sqrt(dx*dx+dy*dy);
-                if (mouseDistance < 480) {
-                  ctx.strokeStyle='rgba(0,181,255,' + opacityValue + ')';
-                } else {
+                
                 ctx.strokeStyle='rgba(0,181,255,' + opacityValue + ')';
-                }
+               
                 ctx.lineWidth = .3;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[b].x, particlesArray[b].y);
                 ctx.lineTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.stroke();
-              
-                ctx.lineWidth = .27;
-                ctx.strokeStyle = 'rgba(0,181,255,' + opacityValue/40 + ')';
+                if (mouseDistance < 300) {
+                    ctx.strokeStyle='rgba(0,181,255,' + mouseDistance/600 + ')';
+                    ctx.lineWidth = .27;
+               
                 ctx.beginPath();
                 ctx.moveTo(mouse.x, mouse.y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.lineTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.stroke();
+                  } 
+                
              
             }
         }
