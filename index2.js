@@ -18,7 +18,7 @@ window.addEventListener('pointermove',
         mouse.y = event.y;
     }
 );
-particlesArray = [];
+
 // create particle
 class Particle {
     constructor(x, y, directionX, directionY, size, color ,id) {
@@ -79,6 +79,7 @@ class Particle {
 function init() {
     
     let numberOfParticles = parseInt((canvas.width*canvas.height)/10000);
+    particlesArray = [];
     for (let i = 0; i < numberOfParticles; i++) {
         let size = 2;
         let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
