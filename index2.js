@@ -12,7 +12,7 @@ let mouse = {
     radius: (canvas.height/80) * (canvas.width/80)
 }
 
-window.addEventListener('pointermove',
+window.addEventListener('touchmove',
     function(event) {
         mouse.x = event.x;
         mouse.y = event.y;
