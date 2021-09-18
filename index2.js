@@ -14,8 +14,10 @@ let mouse = {
 
 window.addEventListener('touchmove',
     function(event) {
-        mouse.x = event.x;
-        mouse.y = event.y;
+         
+mouse.x  = event.changedTouches[0].clientX;
+mouse.y  = event.changedTouches[0].clientY;
+      
     }
 );
 
