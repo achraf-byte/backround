@@ -132,7 +132,7 @@ var b = document.getElementById("foo");
 // animation loop
 function animate() {
     requestAnimationFrame(animate);
-    ctx.clearRect(0,0,innerWidth, innerHeight);
+     ctx.clearRect(0,0,canvas.width, canvas.height);
     connect();
     for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
