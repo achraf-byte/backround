@@ -71,8 +71,8 @@ class Particle {
        
         
         // move particle
-        this.x += this.directionX;
-        this.y += this.directionY;
+        this.x += this.directionX/1.3;
+        this.y += this.directionY/1.3;
         // draw particle
         this.draw();
 
@@ -85,7 +85,7 @@ class Particle {
 // create particle array
 function init() {
     
-    let numberOfParticles = parseInt((canvas.width*canvas.height)/10000);
+    let numberOfParticles = parseInt((canvas.width*canvas.height)/15000);
     particlesArray = [];
     for (let i = 0; i < numberOfParticles; i++) {
         let size = 2;
@@ -106,7 +106,7 @@ function connect(){
         for (let b = a; b < particlesArray.length; b++) {
             let distance = (( particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
             + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-            if (distance < (canvas.width/5) * (canvas.height/5)) {
+            if (distance < (canvas.width/4) * (canvas.height/4)) {
                 opacityValue = 1 - (distance/30000);
                 let dx = mouse.x - particlesArray[b].x;
                 let dy = mouse.y - particlesArray[b].y;
