@@ -64,8 +64,8 @@ class Particle {
             mouse.x - this.x
           );
         if (distance < 100){
-            this.directionX= Math.cos(angel + Math.PI) 
-            this.directionY= Math.sin(angel + Math.PI )
+            this.directionX= Math.cos(angel ) 
+            this.directionY= Math.sin(angel )
         }
         //chek coligion betwen particels
        
@@ -119,15 +119,7 @@ function connect(){
                 ctx.moveTo(particlesArray[b].x, particlesArray[b].y);
                 ctx.lineTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.stroke();
-                if (mouseDistance < 300) {
-                    ctx.strokeStyle='rgba(0,181,255,' + mouseDistance/1800 + ')';
-                    ctx.lineWidth = .27;
                
-                ctx.beginPath();
-                ctx.moveTo(mouse.x, mouse.y);
-                ctx.lineTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.stroke();
-                  } 
                 
              
             }
