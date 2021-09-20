@@ -120,8 +120,8 @@ function connect(){
                 ctx.lineTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.stroke();
                
-                if (mouseDistance < canvas.width/5) {
-                    ctx.strokeStyle='rgba(0,181,255,' + mouseDistance/600 + ')';
+                if (mouseDistance < canvas.width/15) {
+                    ctx.strokeStyle='rgba(0,181,255,' +  canvas.width/15/600 + ')';
                     ctx.lineWidth = .27;
                
                 ctx.beginPath();
