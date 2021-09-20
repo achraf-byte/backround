@@ -71,8 +71,8 @@ class Particle {
        
         
         // move particle
-        this.x += this.directionX/;
-        this.y += this.directionY/;
+        this.x += this.directionX;
+        this.y += this.directionY;
         // draw particle
         this.draw();
 
