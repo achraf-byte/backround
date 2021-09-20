@@ -120,7 +120,15 @@ function connect(){
                 ctx.lineTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.stroke();
                
-                
+                if (mouseDistance < canvas.width/2) {
+                    ctx.strokeStyle='rgba(0,181,255,' + mouseDistance/600 + ')';
+                    ctx.lineWidth = .27;
+               
+                ctx.beginPath();
+                ctx.moveTo(mouse.x, mouse.y);
+                ctx.lineTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.stroke();
+                  } 
              
             }
         }
